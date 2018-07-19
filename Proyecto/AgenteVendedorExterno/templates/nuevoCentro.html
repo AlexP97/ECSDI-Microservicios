@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anadir un entro logistico a un producto</title>
+</head>
+<body>
+	<h1>Que centro quieres anadir?</h1>
+	<form action="/productos/{{id}}/crearCentroProducto" method="GET">
+		<p>Identificador del centro (Sin URI): </p>
+		<input type="text" name="centro_id"/>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

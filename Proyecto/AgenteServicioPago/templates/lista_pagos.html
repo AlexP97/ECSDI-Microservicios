@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de pagos</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+<body>
+	<h1>Lista de pagos</h1>
+		<table>
+			<thead>
+				<tr>
+					<th> Id </th>
+					<th> Origen </th>
+					<th> Destinatario </th>
+					<th> Forma Origen </th>
+					<th> Forma Destinatario </th>
+					<th> Importe </th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for elem in list %}
+				<tr>
+					<td>{{ elem['id']}}</td>
+					<td>{{ elem['origen']}}</td>
+					<td>{{ elem['destinatario']}}</td>
+					<td>{{ elem['formaOrigen']}}</td>
+					<td>{{ elem['formaDestinatario']}}</td>
+					<td>{{ elem['importe']}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+</body>

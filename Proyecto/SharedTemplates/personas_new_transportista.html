@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un transportista</title>
+</head>
+<body>
+	<h1>Que transportista quieres anadir?</h1>
+	<form action="/transportistas/submit" method="GET">
+		<p>Identificador del transportista: </p>
+		<input type="text" name="id" value='{{id or ''}}'/>
+		<p>Nombre: </p>
+		<input type="text" name="nombre"/>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

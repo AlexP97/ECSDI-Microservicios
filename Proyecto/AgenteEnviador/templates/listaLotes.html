@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Lotes</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+<body>
+	<h1>Lotes pendientes de envío</h1>
+	{% if list %}
+		{% set header = list[0] %}
+		<table>
+			<thead>
+				<tr>
+				{% for key,value in header.items() %}
+					<th>{{ key }}</th>
+
+				{% endfor %}
+					<th>Enviar lote</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for elem in list %}
+				<tr>
+					{% for key,value in elem.items() %}
+						<td>{{ value }}</td>
+					{% endfor %}
+					<td>
+						{%if elem['Estadodellote'] == 'Idle'%}
+            <a href="/pedirOferta?id={{ elem['Id'] }}"><button>Enviar </button></a>
+           				{%endif%}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<h2>No hay elementos en la lista<h2>
+
+	{% endif %}
+
+</body>

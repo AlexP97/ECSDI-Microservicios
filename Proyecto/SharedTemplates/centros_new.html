@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un centro al repositorio local</title>
+</head>
+<body>
+	<h1>Que centro quieres anadir?</h1>
+	<form action="/nuevoCentro" method="GET">
+		<p>Identificador del centro: </p>
+		<input type="text" name="id"/>
+		<p>Direccion del centro: </p>
+		<input type="text" name="direccion"/>
+		<p>Codigo postal del centro: </p>
+		<input type="number" max=99999 name="cp"/>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

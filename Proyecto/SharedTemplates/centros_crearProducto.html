@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un producto al centro</title>
+</head>
+<body>
+	<h1>Que producto quieres anadir al centro {{id}}?</h1>
+	<form action="/centros/{{id}}/submitProducto" method="GET">
+		<p>Identificador del producto: </p>
+		<input type="text" name="id"/>
+		<p>Peso del producto: </p>
+		<input type="number" step="0.01" min="0" name="peso">
+		<button type="submit">Enviar</button>
+	</form>
+</body>

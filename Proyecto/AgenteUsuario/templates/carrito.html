@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carrito de la compra</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+<body>
+	<h1>Carrito de la compra de {{ name }}</h1>
+	{% if list %}
+		{% set header = list[0] %}
+		<table>
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Cantidad</th>
+					<th>Subtotal</th>
+					<th>Total</th>
+				</tr>
+				<tr>
+
+				</tr>
+			</thead>
+			<tbody>
+				{% for elem in list %}
+				<tr>
+					<td>{{elem['Nombre']}}</td>
+					<td>{{elem['Cantidad']}}</td>
+					<td>{{elem['Subtotal']}}</td>
+					<td>{{elem['Total']}}</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td>Total</td>
+					<td></td>
+					<td></td>
+					<td>{{ total }}</td>
+				</tr>
+			</tbody>
+		</table>
+		<form action="/checkout" method="GET">
+			<p>Prioridad: </p>
+			<select name="prioridad">
+				<option value="Indefinida">Indefinida</option>
+  				<option value="Inmediata">Inmediata</option>
+  				<option value="Normal">Normal</option>
+			</select>
+			<p>Direccion de entrega: </p>
+			<input type="text" name="direccion"/>
+			<p>Codigo postal: </p>
+			<input type="number" max=99999 name="cp"/>
+			<button type="submit">Confirmar Compra</button>
+		</form>
+		<br>
+		<a href="/vaciarCarrito"><button>Vaciar Carrito</button></a>
+	{% else %}
+		<h2>No hay elementos en la lista<h2>
+	{% endif %}
+</body>

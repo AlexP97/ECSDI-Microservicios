@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dar una opinión</title>
+</head>
+<body>
+	<h1>Danos tu opinión</h1>
+	<form action="/productosaOpinar/{{id}}/crearOpinion" method="GET">
+		<p>Puntuación: </p>
+		<input type="number" min="1" max="10" name="puntuacion"/>
+		<p>Descripción: </p>
+		<input type="text" name="descripcion"/>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

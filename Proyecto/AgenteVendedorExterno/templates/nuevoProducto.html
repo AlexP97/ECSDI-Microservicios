@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un producto al repositorio local</title>
+</head>
+<body>
+	<h1>Que producto quieres añadir?</h1>
+	<form action="/crearProducto" method="GET">
+		<p>Identificador del producto: </p>
+		<input type="text" name="id"/>
+		<p>Nombre del producto: </p>
+		<input type="text" name="nombre"/>
+		<p>Precio del producto: </p>
+		<input type="number" name="precio"/>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

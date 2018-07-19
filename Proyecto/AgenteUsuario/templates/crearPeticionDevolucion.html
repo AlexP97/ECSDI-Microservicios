@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Devolver producto</title>
+</head>
+<body>
+	<h1>Da la razón de la devolución</h1>
+	<form action="/envios/{{idEnvio}}/productos/{{idPedido}}/{{idProducto}}/devolver" method="GET">
+		<p>Razón: </p>
+		<select name="razon">
+			<option value="NoSatisface">NoSatisface</option>
+  			<option value="Defectuoso">Defectuoso</option>
+  			<option value="Equivocado">Equivocado</option>
+		</select>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

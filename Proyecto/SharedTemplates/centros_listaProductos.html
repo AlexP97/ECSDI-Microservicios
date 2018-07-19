@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de productos de un centro</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+</style>
+<body>
+	<h1>Lista de productos del centro {{ centro }}</h1>
+	{% if list %}
+		{% set header = list[0] %}
+		<table>
+			<thead>
+				<tr>
+				{% for key,value in header.items() %}
+					<th>{{ key }}</th>
+				{% endfor %}
+					<th>Borrar</th>
+					<th>Editar</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for elem in list %}
+				<tr>
+					{% for key,value in elem.items() %}
+						<td>{{ value }}</td>
+					{% endfor %}
+					<td>
+						<a href="/centros/{{id}}/productos/{{elem['id']}}/borrar"><button>Borrar Producto</button></a>
+					</td>
+					<td>
+						<a href="/centros/{{id}}/productos/{{elem['id']}}/editar"><button>Editar Producto</button></a>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<h2>No hay elementos en la lista<h2>
+	{% endif %}
+	<a href="/centros/{{id}}/crearProducto"><button>Crear nuevo producto</button></a>
+</body>

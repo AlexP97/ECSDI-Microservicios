@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un pedido al repositorio local</title>
+</head>
+<body>
+	<h1>Que pedido quieres anadir?</h1>
+	<form action="/crearPedido" method="GET">
+		<p>Identificador del pedido: </p>
+		<input type="text" name="id"/>
+		<p>Usuario que ha realizado el pedido: </p>
+		<input type="text" name="user_id"/>
+		<p>Fecha del pedido: </p>
+		<input type="date" name="date"/>
+		<p>Prioridad: </p>
+		<input type="text" name="prioridad"/>
+		<p>Direccion de entrega: </p>
+		<input type="text" name="direccion"/>
+		<p>Codigo postal: </p>
+		<input type="number" max=99999 name="cp"/>
+		<br>
+		<p>Vendido por (identificador sin URI): </p>
+		<input type="text" name="responsable"/>
+		<br>
+		<button type="submit">Enviar</button>
+	</form>
+</body>

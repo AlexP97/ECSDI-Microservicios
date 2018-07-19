@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Añadir un vendedor</title>
+</head>
+<body>
+	<h1>Que vendedor quieres anadir?</h1>
+	<form action="/vendedores/submit" method="GET">
+		<p>Identificador del vendedor: </p>
+		<input type="text" name="id"/>
+		<p>IBAN: </p>
+		<input type="text" name="iban"/>
+		<button type="submit">Enviar</button>
+	</form>
+</body>
